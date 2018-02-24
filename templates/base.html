@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>
+		{% block title %}
+		{% endblock %}
+	</title>
+	
+	<link href="{{STATIC_URL}}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+
+	<script src="{{STATIC_URL}}jquery/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8" async defer></script>
+
+	<style>
+		
+	</style>
+	<script>
+		$(document).ready(function(){
+
+		$.fx.speeds.lentoo = 3000;
+
+		$("#btn1").on('click', function(event) {
+			event.preventDefault();
+			$("#conti").fadeOut('lentoo',function(){
+				//$("body").append("El elemento se a borrado");
+				//Si lo queremos eliminar accedemos al elemento this que es el ejemplo
+				//$(this).remove();
+				$(this).fadeIn(100);
+			});
+		});
+	});
+	</script>
+
+</head>
+<body class=" login"
+  data-admin-utc-offset="0">
+
+	<legend>
+		{% block subtitle %}
+		{% endblock %}
+	</legend>
+
+<div class="container">
+	
+	{% block content %}
+
+	{% endblock %}
+
+</div>
+
+<script src="{{STATIC_URL}}bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8" async defer></script>
+
+</body>
+</html>

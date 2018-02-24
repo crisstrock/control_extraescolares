@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block subtitle %}
+
+	acerca de ...
+
+{% endblock %}
+
+{% block content %}
+
+<h1>{{request.user}}</h1>
+<p>{{request.user.email}}</p>
+<label> {{request.user.first_name}}</label>
+<label> {{request.user.last_name}}</label>
+<div class="wrap-content">
+
+	<button class="btn btn-primary"> Mostrar información </button>
+	
+</div>
+
+{% endblock %}

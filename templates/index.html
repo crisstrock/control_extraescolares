@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Primera pagina con Django
+{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+{{user.is_authenticated}}
+
+{% else %}
+
+<form action="/apps/inicio/about.html" method="post" id="login-form" class="form-signin">
+  <input type='hidden' name='csrfmiddlewaretoken' value='yCCFCnKHwyd0iValss8CHX0MbtuVSkGnXwQutAg8UwcV6nKHDsRLhjlfzj42ZisL' />
+      <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Por favor Inicia Sesión</h1>
+      <label for="inputEmail" class="sr-only">Correo</label>
+      <input type="text" id="id_username" class="form-control" placeholder="Ingresa tu correo" required autofocus name="username" maxlength="254">
+      <label for="inputPassword" class="sr-only">Contraseña</label>
+      <input type="password" class="form-control" placeholder="Ingresa tu contraseña" required name="password" id="id_password"><input type="hidden" name="next" value="/admin/" />
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Redordar
+        </label>
+      </div>
+
+      <div class="submit-row">
+    <label>&nbsp;</label><input type="submit" value="Iniciar sesión" />
+  </div>
+      
+    </form>
+
+  {% endif %}
+
+{% endblock %}
